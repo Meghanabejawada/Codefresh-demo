@@ -1,14 +1,9 @@
-/* Sample terraform script to create an EC2 instance
- * Contact : www.arshadzackeriya.com, hello@arshadzackeriya.com
- * Written by Arshad Zackeriya, May 2018
- */
-
 ########################
 ## Variables
 ########################
 
 variable "region" {
-    default = "set your region here"
+  default = "set your region here"
 }
 
 variable "shared_credentials_file" {
@@ -24,17 +19,17 @@ variable "ami" {
 }
 
 variable "instance_type" {
-  default = "instance type example :m5.large"
+  default = "instance type example :t2.micro"
 }
 
 variable "availability_zone" {
-  default = "type the AZ name here example: us-east-1a"
+  default = "type the AZ name here example: us-west-2"
 }
 
 variable "vpc_rds_security_group_id" {
-    type    = "list"
-    default = ["sg-fe44trr5,sg-fe74444,sg-fe7ddd5"]
-#you can multiple security groups as above example.
+  type    = list(any)
+  default = ["sg-fe44trr5,sg-fe74444,sg-fe7ddd5"]
+  #you can multiple security groups as above example.
 }
 
 variable "subnet_id" {
